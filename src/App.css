@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Work+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  position: relative;
+}
+
+.background-image {
+  inset: 0;
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  background-image: url('../public/bg.png'), linear-gradient(lightgray, lightgray);
+  background-size: cover, 50%;
+  background-repeat: no-repeat;
+  background-position: center, 50% 50%;
+}
+
+
+.background-image .overlay {
+  inset: 0;
+  opacity: .9;
+  position: absolute;
+  background: #000000af;
+}
+
+.navbar {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  padding: .5rem 1rem;
+  display: flex;
+  max-width: 300px;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid #FFF;
+  background: linear-gradient(132deg, rgba(124, 15, 53, 0.20) 0%, rgba(88, 18, 102, 0.20) 100%);
+}
+
+.search input {
+  border: none;
+  width: 100%;
+  color: white;
+  padding: .25rem;
+  font-size: 1rem;
+  background: transparent;
+  outline: none;
+}
+
+.search input::placeholder {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.btn-connect {
+  color: #FFF;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 20px;
+  font-family: Poppins;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(131deg, #7C0F35 0%, #581266 100%);
+}
+
+
+.main-container {
+  padding: 2rem;
+}
+
+.heading {
+  color: white;
+  font-family: Work Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.mobile-navbar {
+  display: none;
+}
+
+.upper-nav {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  position: fixed;
+  background-color: #F30050;
+}
+
+@media only screen and (max-width:426px) {
+  .navbar {
+    display: none;
+  }
+
+  .mobile-navbar {
+    display: grid;
+  }
+
+  .app .sidebar {
+    display: none;
+  }
+
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .search {
+    width: 100%;
+    margin: auto;
+  }
+
+  .hamberger-menu {
+    appearance: none;
+    opacity: 0;
+  }
+
+  .menu-list {
+    padding: 1rem 0;
+    display: none;
+  }
+
+  .mobile-navbar:has(.hamberger-menu:checked) .menu-list {
+    display: block;
+  }
+
+}
