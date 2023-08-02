@@ -31,7 +31,7 @@ const App = () => {
                     return 0;
                });
 
-               setSearchData(data.pairs)
+               setSearchData(data.pairs.slice(0, 10))
                console.log('searched data (sorted by priceNative in descending order): ', data);
           } catch (error) {
                console.log('error: ', error);
